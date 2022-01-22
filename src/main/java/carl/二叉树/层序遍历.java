@@ -33,10 +33,10 @@ public class 层序遍历 {
             int length = queue.size();
             while (length > 0) {
                 TreeNode treeNode = queue.poll();
-                if (treeNode == null) {
-                    list = new ArrayList<>();
-                    treeNode = queue.poll();
-                }
+//                if (treeNode == null) {
+//                    list = new ArrayList<>();
+//                    treeNode = queue.poll();
+//                }
                 list.add(treeNode.val);
                 length--;
                 if (treeNode.left != null) {
