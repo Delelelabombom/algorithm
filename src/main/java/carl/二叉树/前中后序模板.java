@@ -24,9 +24,9 @@ public class 前中后序模板 {
             stack.push(root);
         }
         while (!stack.isEmpty()) {
-            TreeNode treeNode = stack.peek();
+            TreeNode treeNode = stack.pop();
             if (treeNode != null) {
-                stack.pop();
+
                 if (treeNode.right != null) {
                     stack.push(treeNode.right);
                 }
@@ -36,7 +36,7 @@ public class 前中后序模板 {
                     stack.push(treeNode.left);
                 }
             }else {
-                stack.pop();
+
                 result.add(stack.pop().val);
             }
         }
