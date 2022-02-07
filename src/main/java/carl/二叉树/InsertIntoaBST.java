@@ -10,6 +10,27 @@ package carl.二叉树;
  */
 public class InsertIntoaBST {
     public TreeNode insertIntoBST(TreeNode root, int val) {
-        return null;
+        if (root == null) {
+            root = new TreeNode(val);
+        } else {
+            traverse(root, val);
+        }
+        return root;
+    }
+
+    private void traverse(TreeNode root, int val) {
+        if (root.val > val) {
+            if (root.left == null) {
+                root.left = new TreeNode(val);
+                return;
+            }
+            traverse(root.left, val);
+        } else {
+            if (root.right == null) {
+                root.right = new TreeNode(val);
+                return;
+            }
+            traverse(root.right, val);
+        }
     }
 }
